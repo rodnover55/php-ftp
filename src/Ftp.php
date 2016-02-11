@@ -182,7 +182,16 @@ class Ftp
                 throw new RuntimeException('Cannot parse data.');
             }
 
-            return $matches[7];
+            $info = new FileInfo();
+
+            $info->setName($matches[7])
+                ->setDate($matches[6])
+                ->setType(($matches[1][1] == 'd') ?
+                    (FileInfo::DIRECTORY) :
+                    (FileInfo::FILE)
+                );
+
+            return $info;
         }, array_filter(explode("\n", $this->curl->response)));
 
         return $files;
