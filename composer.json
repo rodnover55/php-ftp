@@ -8,6 +8,16 @@
     "require-dev": {
         "phpunit/phpunit": "^5.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Rnr\\Ftp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rnr\\Tests\\Ftp\\": "tests"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
