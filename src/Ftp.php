@@ -167,6 +167,8 @@ class Ftp
 
         $url = $this->url($directory);
 
+        $url = rtrim($url, '/') . '/';
+
         $this->curl->setOpt(CURLOPT_URL, $url);
 
         $this->curl->_exec();
@@ -175,7 +177,7 @@ class Ftp
             $matches = [];
 
             if (!preg_match('/^([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+' .
-                '(.{3} \d{2} \d{2}:\d{2})\s+([^\s]+)/', $line, $matches
+                '(.{3} \d{2} \d{2}:\d{2})\s+(.+)/', $line, $matches
             )) {
                 throw new RuntimeException('Cannot parse data.');
             }
