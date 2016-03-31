@@ -3,7 +3,7 @@
     "description": "PHP FTP wrapper over curl",
     "type": "library",
     "require": {
-        "php-mod/curl": "^1.3"
+        "curl/curl": "^1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.2"
