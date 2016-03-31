@@ -171,7 +171,7 @@ class Ftp
 
         $this->curl->setOpt(CURLOPT_URL, $url);
 
-        $this->_exec();
+        $this->exec();
 
         $files = array_map(function ($line) {
             $matches = [];
@@ -204,7 +204,7 @@ class Ftp
 
         $this->curl->setOpt(CURLOPT_URL, $url);
 
-        $this->_exec();
+        $this->exec();
 
         return $this->curl->response;
     }
@@ -221,7 +221,7 @@ class Ftp
             CURLOPT_INFILESIZE => $size
         ]);
 
-        $this->_exec();
+        $this->exec();
 
         return $this->curl->response;
     }
@@ -234,7 +234,7 @@ class Ftp
             CURLOPT_QUOTE => ["DELE {$file}"]
         ]);
 
-        $this->_exec();
+        $this->exec();
 
         return $this->curl->response;
     }
