@@ -2,7 +2,6 @@
 
 namespace Rnr\Ftp;
 
-use Curl\Curl;
 use RuntimeException;
 
 /**

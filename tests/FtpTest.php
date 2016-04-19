@@ -1,5 +1,6 @@
 <?php
 namespace Rnr\Tests\Ftp;
+
 use Rnr\Ftp\Ftp;
 
 /**
